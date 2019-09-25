@@ -10,14 +10,16 @@ class SemanticVersion():
     def __str__(self):
         return f'{self.major}.{self.minor}.{self.patch}'
 
-
+    def patch_version_up(self):
+        return SemanticVersion(self.major, self.minor, self.patch + 1)
 
 
 def main():
     # Python3.7.0 というバージョンを表現したもの
     py370 = SemanticVersion(major=3, minor=7, patch=0)
 
-    print('3.7.0' == str(py370))  # True
+    py371 = py370.patch_version_up()
+    print(SemanticVersion(3, 7, 1) == py371)  # True
 
 
 if __name__ == '__main__':
