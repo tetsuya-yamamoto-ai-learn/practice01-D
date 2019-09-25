@@ -14,9 +14,10 @@ class SemanticVersion():
         return SemanticVersion(self.major, self.minor, self.patch + 1)
 
     def minor_version_up(self):
-        return SemanticVersion(self.major, self.minor + 1, self.patch)
+        return SemanticVersion(self.major, self.minor + 1, patch=0)
 
-    def major_version_up
+    def major_version_up(self):
+        return SemanticVersion(self.major + 1, minor=0, patch=0)
 
 def main():
     # Python3.7.0 というバージョンを表現したもの
